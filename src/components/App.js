@@ -8,6 +8,7 @@ import { Navigate } from "react-router-dom";
 
 function ProtectedRoute(props) {
   const auth = useAuth();
+
   const { Component } = props;
   const Navigate = useNavigate();
   useEffect(() => {
@@ -20,6 +21,7 @@ function ProtectedRoute(props) {
 
 function App() {
   const auth = useAuth();
+  console.log("auth", auth);
 
   if (auth.loading) {
     return <Loader />;
